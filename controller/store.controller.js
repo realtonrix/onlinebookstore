@@ -114,4 +114,19 @@ const updateBook = async (req, res) =>{
   }
 };
 
-module.exports = { createBook, getBook, getSingleBook, deleteBook, updateBook};
+const getAllBook = async (req, res) => {
+  try {
+    const getBooks = await storeModel.find();
+    res.status(200).json({
+      message: "books gotten successfully",
+      data: getBooks,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Failed to get all book",
+      data: error,
+    });
+  }
+};
+
+module.exports = { createBook, getBook, getSingleBook, deleteBook, updateBook, getAllBook};

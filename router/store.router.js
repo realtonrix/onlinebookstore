@@ -4,7 +4,9 @@ const {
     getBook, 
     getSingleBook, 
     deleteBook, 
-    updateBook } = require("../controller/store.controller");
+    updateBook,
+    getAllBook, 
+} = require("../controller/store.controller");
 const { upload } = require("../config/multer");
 const router = express.Router();
 
@@ -13,5 +15,6 @@ router.route("/book/:id").get(getBook);
 router.route("/singlebook/:id").get(getSingleBook);
 router.route("/removebook/:id/:bookID").delete(deleteBook);
 router.route("/updatebook/:id").patch(updateBook);
+router.route("/allbooks").get(getAllBook);
 
 module.exports = router;
