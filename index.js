@@ -8,7 +8,7 @@ const PORT = 2030;
 
 app.use(express.json());
 app.use(cors());
-app.use(corse({origin: "http://localhost:5173"}))
+//app.use(corse({origin: "http://localhost:5173"}))
 
 app.get("/", (req, res) => {
   res.status(200).json({
